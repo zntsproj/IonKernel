@@ -3,43 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ion Kernel 0.1-stable</title>
+    <title>Ion Kernel</title>
     <style>
         /* General page styles */
         body {
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
-            background: #f0f0f0;
+            background: #121212; /* Dark background */
+            color: #e0e0e0; /* Light text color */
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            transition: background 0.3s ease; /* Smooth background transition */
         }
 
         /* Container with frosted glass effect and rounded corners */
         .container {
-            background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
-            border-radius: 15px; /* Rounded corners */
+            background: rgba(40, 40, 40, 0.7); /* Darker semi-transparent background */
+            border-radius: 15px;
             padding: 40px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-            backdrop-filter: blur(10px); /* Frosted glass effect */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Darker shadow for depth */
+            backdrop-filter: blur(10px);
             text-align: center;
             width: 400px;
+            animation: slideUp 1s ease-out;
         }
 
         /* Header style */
         h1 {
             font-size: 36px;
-            color: #333;
+            color: #fff; /* White text for the header */
             margin-bottom: 20px;
+            animation: fadeIn 1.2s ease-in-out;
         }
 
         /* Description style */
         p {
             font-size: 16px;
-            color: #666;
+            color: #bbb; /* Light grey text for description */
             margin-bottom: 30px;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         /* Download button style */
@@ -51,11 +56,12 @@
             border: none;
             border-radius: 30px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
         }
 
         .download-btn:hover {
-            background-color: #45a049; /* Darker green when hovering */
+            background-color: #45a049;
+            transform: scale(1.1); /* Button scaling effect on hover */
         }
 
         /* Animation for fading in elements */
@@ -72,14 +78,27 @@
                 opacity: 1;
             }
         }
+
+        /* Slide-up animation for container */
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
     </style>
 </head>
 <body>
 
     <!-- Container for the main content -->
     <div class="container">
-        <h1>Ion Kernel 0.1-stable</h1>
-        <p>Download and try the new kernel for your system. Lightweight and fast! By the way, did you know... That our kernel runs on 554 lines of code!</p>
+        <h1>Ion Kernel</h1>
+        <p>Download and try the new kernel for your system. Lightweight and fast! By the way, did you know...</p>
         <a href="Ion.tar.xz" download>
             <button class="download-btn">Download</button>
         </a>
